@@ -1,0 +1,13 @@
+import { call } from "./api";
+export type DesktopRun = { id: string; title: string; start_url: string | null; status: string; cost_usd: number; created_at: string; updated_at: string };
+export type DesktopCard = { status: string; costUsd: number; costEstimated: boolean; turns: number; maxSteps: number | null; wallSecs: number | null; containerSecs: number | null; finalMessage: string | null; stopReason: string | null };
+export type DesktopState = { status: string; control: "agent" | "asking" | "human"; askReason: string | null; controlSince: number | string | null };
+export type DesktopDetail = { run: DesktopRun; state: DesktopState | null; card: DesktopCard | null; error?: string };
+const B = (o: unknown) => ({ method: "POST", body: JSON.stringify(o) });
+export const desktopConfig = () => call<{ enabled: boolean; maxSteps: { default: number; max: number } }>("/api/desktop/config");
+export const listDesktop = () => call<{ enabled: boolean; runs: DesktopRun[] }>("/api/desktop/runs");
+export const startDesktop = (o: { instruction: string; startUrl?: string; maxSteps?: number }) => call<{ id: string; error?: string }>("/api/desktop/runs", B(o));
+export const getDesktop = (id: string) => call<DesktopDetail>(`/api/desktop/runs/${id}`);
+export const desktopEvents = (id: string, after: number) => call<{ events: import("./cloud-events").AgentEvent[] }>(`/api/desktop/runs/${id}/events?after=${after}`);
+export const desktopControl = (id: string, on: boolean) => call<{ control?: string; error?: string }>(`/api/desktop/runs/${id}/control`, B({ on }));
+export const desktopStop = (id: string) => call<{ ok?: boolean; error?: string }>(`/api/desktop/runs/${id}/stop`, B({}));

@@ -1,0 +1,55 @@
+{"_fixture": "14-web-search-citations-haiku45", "source": "gateway-log", "log_id": "01M3NSZ8QT4Z3CV6P63N38ZQXJ", "model": "anthropic/claude-haiku-4.5", "http_status": 200, "duration_ms": 3081, "note": "Haiku 4.5 server tool: server_tool_use + web_search_tool_result (delivered complete in content_block_start, no deltas) + interleaved cited/uncited text blocks (citations_delta)."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "metadata", "stream", "system", "temperature", "thinking", "tool_choice", "tools"], "thinking": {"type": "disabled"}, "output_config": null, "stream": true, "tool_choice": {"type": "tool", "name": "web_search"}, "max_tokens": 32000, "tools": 1, "messages": [{"role": "user", "blocks": [{"type": "text", "chars": 101}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 2365, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 0, "ephemeral_1h_input_tokens": 0}, "output_tokens": 12}, "id": "<id>", "model": "claude-haiku-4-5-20251001", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "server_tool_use", "id": "<id:12>", "name": "web_search", "input": {}}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "{\"q"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "uer"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "y\":"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " \"<"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "str"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "ing"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " 65"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " ch"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "ars"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ">\"}"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_stop", "index": 0}
+{"type": "content_block_start", "index": 1, "content_block": {"type": "web_search_tool_result", "tool_use_id": "<id:12>", "content": [{"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}, {"type": "web_search_result", "title": "<title>", "url": "<url>", "encrypted_content": "<encrypted>", "page_age": "<age>"}]}}
+{"type": "content_block_stop", "index": 1}
+{"type": "content_block_start", "index": 2, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 2, "delta": {"type": "text_delta", "text": "<text 5 chars>"}}
+{"type": "content_block_delta", "index": 2, "delta": {"type": "text_delta", "text": "<text 24 chars>"}}
+{"type": "content_block_stop", "index": 2}
+{"type": "content_block_start", "index": 3, "content_block": {"type": "text", "citations": [], "text": ""}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "citations_delta", "citation": {"type": "web_search_result_location", "cited_text": "<text 124 chars>", "url": "<url>", "title": "<title>", "encrypted_index": "<idx>"}}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 3 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 8 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 6 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 8 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 1 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 7 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 1 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 10 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 5 chars>"}}
+{"type": "content_block_delta", "index": 3, "delta": {"type": "text_delta", "text": "<text 13 chars>"}}
+{"type": "content_block_stop", "index": 3}
+{"type": "content_block_start", "index": 4, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 4, "delta": {"type": "text_delta", "text": "<text 9 chars>"}}
+{"type": "content_block_delta", "index": 4, "delta": {"type": "text_delta", "text": "<text 5 chars>"}}
+{"type": "content_block_delta", "index": 4, "delta": {"type": "text_delta", "text": "<text 19 chars>"}}
+{"type": "content_block_delta", "index": 4, "delta": {"type": "text_delta", "text": "<text 8 chars>"}}
+{"type": "content_block_delta", "index": 4, "delta": {"type": "text_delta", "text": "<text 15 chars>"}}
+{"type": "content_block_stop", "index": 4}
+{"type": "content_block_start", "index": 5, "content_block": {"type": "text", "citations": [], "text": ""}}
+{"type": "content_block_delta", "index": 5, "delta": {"type": "citations_delta", "citation": {"type": "web_search_result_location", "cited_text": "<text 132 chars>", "url": "<url>", "title": "<title>", "encrypted_index": "<idx>"}}}
+{"type": "content_block_delta", "index": 5, "delta": {"type": "text_delta", "text": "<text 24 chars>"}}
+{"type": "content_block_delta", "index": 5, "delta": {"type": "text_delta", "text": "<text 7 chars>"}}
+{"type": "content_block_delta", "index": 5, "delta": {"type": "text_delta", "text": "<text 8 chars>"}}
+{"type": "content_block_stop", "index": 5}
+{"type": "content_block_start", "index": 6, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 6, "delta": {"type": "text_delta", "text": "<text 1 chars>"}}
+{"type": "content_block_stop", "index": 6}
+{"type": "message_delta", "delta": {"stop_reason": "end_turn", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 17803, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 0, "output_tokens": 126, "server_tool_use": {"web_search_requests": 1}}}
+{"type": "message_stop"}

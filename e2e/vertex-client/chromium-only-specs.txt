@@ -1,0 +1,35 @@
+# CORE tier only (E2E_DEDUP=1): logic / API / content specs that run on desktop-chromium ONLY (the iphone-webkit duplicate is skipped). FULL and smoke keep both projects.
+# Criterion: nothing in the spec depends on viewport, touch or WebKit behaviour. Layout / touch specs (safe-area mobile-layout palette composer input nav chat chat-ux
+# svg-image-tool pwa-update library shell) are deliberately NOT here: they keep both projects. UNVERIFIED: chosen from names + measured per-project cost, not read line by line.
+# a11y: added only to fit CORE <= 15 min (RISK: providers2's axe check once flagged color-contrast on iphone only, so the iphone axe pass can see different things; FULL keeps both projects).
+a11y
+tools
+slash
+connectors
+approval-modes
+scope-hardening
+files
+skills
+projects
+providers
+providers2
+settings-profile
+artifacts
+artifacts-html
+attach-v2
+image
+video
+reliability
+resilience
+depth
+auto
+auto-shadow
+subauto
+subagents
+advisor
+notifications
+csp
+about
+fixes
+chat-env
+devices-identity

@@ -1,0 +1,2 @@
+{"_fixture": "36-error-403-data-sharing", "source": "gateway-log", "log_id": "01M3NR6X5VY56QT3GTMS0QEEVJ", "model": "anthropic/claude-fable-5.1", "http_status": 403, "duration_ms": 371, "note": "Google-shaped 403 PERMISSION_DENIED."}
+{"type": "http_error", "status": 403, "body": {"error": {"code": 403, "message": "Access to this model requires data sharing to be enabled for publisher 'anthropic'. Please set `PublisherModelConfig.data_sharing_enabled_provider` to 'anthropic' via the setPublisherModelConfig API t", "status": "PERMISSION_DENIED"}}}

@@ -1,0 +1,43 @@
+// Public export config: placeholders only. No routes, no real account ids, no service-binding targets.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vertex-client",
+  "main": "server/worker.ts",
+  "compatibility_date": "2026-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "ALLOWED_GITHUB_LOGINS": "example-user",
+    "SSO_ALLOWED_LOGINS": "example-user",
+    "SSO_PUBLIC_KEYS": "{}",
+    "SSO_ISSUER": "auth.internal.invalid",
+    "SSO_AUDIENCE": "dev2",
+    "SSO_AUTH_ORIGIN": "https://auth.internal.invalid",
+    "VAPID_PUBLIC_KEY": "",
+    "VAPID_SUBJECT": "https://app.internal.invalid",
+    "CLOUD_REPOS": ""
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/auth/*", "/af/*", "/device", "/device/*", "/bridge/*"]
+  },
+  "services": [
+    { "binding": "GATEWAY", "service": "example-gateway" },
+    { "binding": "CONNECTOR", "service": "example-connector" },
+    { "binding": "AGENT", "service": "example-agent" },
+    { "binding": "REMOTE", "service": "example-remote-hub", "entrypoint": "RemoteHubRpc" }
+  ],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "example-files" }],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "vertex-client", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }
+  ],
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+  "ai": { "binding": "AI" },
+  "browser": { "binding": "BROWSER" },
+  "worker_loaders": [{ "binding": "LOADER" }],
+  "vectorize": [{ "binding": "VECTORIZE", "index_name": "example-chats" }],
+  "durable_objects": { "bindings": [{ "name": "CHAT", "class_name": "ChatSession" }, { "name": "DEVICES", "class_name": "DeviceHub" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ChatSession"] }, { "tag": "v2", "new_sqlite_classes": ["DeviceHub"] }],
+  "observability": { "enabled": true },
+  "triggers": { "crons": ["* * * * *"] }
+}

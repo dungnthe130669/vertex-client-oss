@@ -1,0 +1,44 @@
+# Specs that log in ONLY through ./fixtures (which logs in as the run's slot user, E2E_SLOT) and touch ONLY data keyed by the caller's scope
+# (conversations, projects, files, artifacts, settings, prompts, skills, usage, profile - every one of these tables/keys is per scope, see docs/vertex-client-e2e-slots.md),
+# so two slots running them at the same time cannot see or delete each other's rows. One basename per line.
+# NOT listed on purpose (shared global state; they stay on slot 0 only):
+#   agents, cloud, desktop   agent-spike names / runs are global (and these three are paused in playwright.config.ts)
+#   remote, scope-hardening  the synthetic remote fixtures + e2e_commands share fixed ids (scope-hardening also drives agents/cloud/desktop/remote)
+#   connectors, tools, slash, approval-modes   the REAL personal notes connector (save_note/search_notes titles "E2E...") is one shared store
+#   desktop-login            hard-codes the classic e2e-bot in its handoff assertions (app_handoffs rows are user-keyed, but the spec asserts the account name)
+# Promote a spec here only after reading it AND a parallel run of it (scripts/slot-lists.test.mjs checks the static part).
+about
+answer-limit
+artifacts
+artifacts-html
+attach-v2
+auto-shadow
+chat
+chat-ux
+csp
+depth
+desktop-ui
+files
+fixes
+header-menu
+image
+input
+library
+nav
+notifications
+palette
+projects
+providers
+pwa-update
+reliability
+resilience
+safe-area
+settings-profile
+shell
+skills
+spaces
+video
+voice
+voice-live
+voice-native
+smoke

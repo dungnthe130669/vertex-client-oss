@@ -1,0 +1,18 @@
+{"_fixture": "04-thinking-omitted-then-tool-sonnet55", "source": "gateway-log", "log_id": "01M3P923V5H1MW4V4WT4SZ2XHY", "model": "anthropic/claude-sonnet-5.5", "http_status": 200, "duration_ms": 2581, "note": "Sonnet 5.5 signature-only thinking followed by a single tool_use."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "stream", "system", "tools"], "thinking": null, "output_config": null, "stream": true, "tool_choice": null, "max_tokens": 4096, "tools": 3, "messages": [{"role": "user", "blocks": [{"type": "text", "chars": 85, "cache_control": {"type": "ephemeral"}}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 4, "cache_creation_input_tokens": 101, "cache_read_input_tokens": 2681, "cache_creation": {"ephemeral_5m_input_tokens": 101, "ephemeral_1h_input_tokens": 0}, "output_tokens": 2}, "id": "<id>", "model": "claude-sonnet-5-5", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "thinking", "thinking": "", "signature": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "thinking_delta", "thinking": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "signature_delta", "signature": "<sig>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "content_block_start", "index": 1, "content_block": {"type": "tool_use", "id": "<id:0>", "name": "search_notes", "input": {}}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": "{\"query\":"}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": " \"<string"}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": " 3 chars>"}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": "\", \"limit"}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": "\": 0}"}}
+{"type": "content_block_stop", "index": 1}
+{"type": "message_delta", "delta": {"stop_reason": "tool_use", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 4, "cache_creation_input_tokens": 101, "cache_read_input_tokens": 2681, "output_tokens": 207, "output_tokens_details": {"thinking_tokens": 134}}}
+{"type": "message_stop"}

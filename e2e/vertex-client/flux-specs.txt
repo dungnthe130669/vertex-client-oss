@@ -1,0 +1,16 @@
+# Specs for features still in flux (PO list 2026-11-05; Erich's open directions: Remote/Desktop UX, devices/terminal, editions/spaces, menu/app-bar rework). Excluded from SMOKE and CORE, kept in FULL.
+# Revisit when the feature settles (a stable spec moves back into core automatically: core = all specs - manual - flux - heavy).
+device-term
+devices-identity
+remote
+desktop-login
+desktop-ui
+appbar
+appbar-overlay
+menu2
+nav-shell
+header-menu
+spaces
+team
+team-ux
+uifix1

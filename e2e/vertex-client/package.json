@@ -1,0 +1,17 @@
+{
+  "name": "vertex-client-e2e",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "explore": "tsx explore/agent.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^22",
+    "tsx": "^4",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,24 @@
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":"The"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":" user"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":" asks"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":" \""},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":"th"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":"ời"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":" tiết"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant","reasoning_content":" Hà"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"content":"","tool_calls":[{"index":0,"id":"call-209165c3-5047-4a9b-9442-b6c117722e68","type":"function","function":{"name":"web_read","arguments":"{\"url\":\"https://www.google.com/search?q=th%E1%BB%8B+t%E1%BB%8B+Ha%20Noi%20hom%20nay\"}"}}],"role":"assistant"},"finish_reason":null,"logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":"tool_calls","logprobs":null}],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":null}
+
+data: {"id":"chatcmpl-008444a8-ead7-4d4a-8827-b272499ca3a9","choices":[],"created":1793065147,"model":"nvidia/nemotron-3.5-lightning-30b-a3b","service_tier":null,"system_fingerprint":null,"object":"chat.completion.chunk","usage":{"prompt_tokens":1716,"completion_tokens":379,"total_tokens":2095,"prompt_tokens_details":{"audio_tokens":null,"cached_tokens":0},"completion_tokens_details":{"accepted_prediction_tokens":null,"audio_tokens":null,"reasoning_tokens":317,"rejected_prediction_tokens":null}}}
+
+data: [DONE]
+

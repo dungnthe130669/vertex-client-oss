@@ -1,0 +1,11 @@
+{"_fixture": "13-image-input-sonnet55", "source": "gateway-log", "log_id": "01M3P97WP2NQP5A5BJ9Z9C1SF0", "model": "anthropic/claude-sonnet-5.5", "http_status": 200, "duration_ms": 1395, "note": "Request has an image/png (base64) + PDF document block; response is plain text."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "stream", "system", "tools"], "thinking": null, "output_config": null, "stream": true, "tool_choice": null, "max_tokens": 4096, "tools": 3, "messages": [{"role": "user", "blocks": [{"type": "document", "source": {"type": "base64", "media_type": "application/pdf", "data_chars": 988}}, {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data_chars": 3592}}, {"type": "text", "chars": 136}]}, {"role": "assistant", "blocks": [{"type": "thinking", "chars": 0, "has_signature": true}, {"type": "text", "chars": 643, "cache_control": {"type": "ephemeral"}}]}, {"role": "user", "blocks": [{"type": "text", "chars": 103, "cache_control": {"type": "ephemeral"}}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 4, "cache_creation_input_tokens": 454, "cache_read_input_tokens": 4597, "cache_creation": {"ephemeral_5m_input_tokens": 454, "ephemeral_1h_input_tokens": 0}, "output_tokens": 8}, "id": "<id>", "model": "claude-sonnet-5-5", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 22 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 23 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 9 chars>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "end_turn", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 4, "cache_creation_input_tokens": 454, "cache_read_input_tokens": 4597, "output_tokens": 21, "output_tokens_details": {"thinking_tokens": 0}}}
+{"type": "message_stop"}

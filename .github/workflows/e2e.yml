@@ -1,0 +1,83 @@
+# Secret-free CI for the public snapshot. Fork-PR safe by construction:
+#   - trigger is `pull_request` (never `pull_request_target`, never `workflow_run`): fork PRs get a read-only token and no secrets;
+#   - top-level `permissions: contents: read`; no job widens it; no secret references anywhere (grep-checked by scripts/oss-export.sh);
+#   - every step that touches the network is bounded (timeout-minutes + per-command timeout/retry); job timeout 20 min;
+#   - every third-party action is pinned to a FULL commit SHA (the tag is in the comment, looked up from the action's public repo);
+#   - `persist-credentials: false` on checkout; no self-hosted runners; no cache action (nothing a PR could poison for main).
+name: ci
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with: { node-version: 24 }
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with: { bun-version: 1.4.0 }
+      - name: install, typecheck, unit tests
+        working-directory: workers/vertex-client
+        run: |
+          npm ci --no-audit --no-fund
+          npm run typecheck
+          npm test
+      - name: spec-list guard
+        if: always()
+        working-directory: e2e/vertex-client
+        run: node --test scripts/tests-public.test.mjs
+  e2e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with: { node-version: 24 }
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with: { bun-version: 1.4.0 }
+      - name: install and build
+        timeout-minutes: 8
+        run: |
+          # ossci1k: run 42230317141 e2e(1) spent 7m21s in `playwright install --with-deps` fetching font .debs from the runner's apt mirror at 47 kB/s;
+          # run 42226037110 e2e(4) stalled there for 30 min. So: no apt at all, and each remaining network step is bounded and retried.
+          retry() { local n=$1 t=$2; shift 2; for i in $(seq 1 "$n"); do timeout "$t" "$@" && return 0; echo "attempt $i/$n failed: $*" >&2; sleep 5; done; return 1; }
+          (cd workers/vertex-client && retry 2 150 npm ci --no-audit --no-fund && npm run build)
+          cd e2e/vertex-client
+          retry 2 150 npm ci --no-audit --no-fund
+          retry 2 100 npx playwright install chromium
+          # no `install-deps`: on ubuntu-24.04 every shared lib chromium needs is already installed (the log shows "already the newest version");
+          # the only thing it downloads is ~20 MB of font .debs at 47 kB/s, and killing apt mid-download (ossci1k run 1/2) leaves its dpkg lock held.
+      - name: run this shard of tests-public.txt (local Worker, per-run random token; nothing to mask, nothing stored)
+        working-directory: e2e/vertex-client
+        env:
+          LOCAL_RUN_DIR: ${{ runner.temp }}/e2e
+          E2E_RETRIES: "1"
+          SHARD: ${{ matrix.shard }}
+        run: |
+          FILES=$(grep -v '^#' tests-public.txt | grep . | awk -v s="$SHARD" -v n=4 '(NR-1)%n==s-1 {print $0 ".spec.ts"}')
+          echo "shard $SHARD: $FILES"
+          # both projects: a spec runs in desktop-chromium-mock if it is on bot-free-specs.txt, else in desktop-chromium (the other project ignores it)
+          scripts/local-run.sh --project desktop-chromium --project desktop-chromium-mock $FILES
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: e2e-shard-${{ matrix.shard }}
+          path: ${{ runner.temp }}/e2e/out
+          if-no-files-found: ignore
+          retention-days: 7

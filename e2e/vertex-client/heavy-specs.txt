@@ -1,0 +1,3 @@
+# Stable but expensive and low-signal per second (FULL only, not CORE): measured seconds in spec-costs.txt.
+voice-native
+device-scroll

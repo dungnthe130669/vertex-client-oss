@@ -1,0 +1,18 @@
+{"_fixture": "16-text-plain-haiku45", "source": "gateway-log", "log_id": "01M3P49DZSZSE7NQ25X1BDGZEE", "model": "anthropic/claude-haiku-4.5", "http_status": 200, "duration_ms": 1174, "note": "Haiku 4.5 plain text."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "metadata", "stream", "system", "thinking", "tools"], "thinking": {"budget_tokens": 31999, "type": "enabled"}, "output_config": null, "stream": true, "tool_choice": null, "max_tokens": 32000, "tools": 24, "messages": [{"role": "user", "blocks": [{"type": "text", "chars": 278}, {"type": "text", "chars": 176}, {"type": "text", "chars": 1880}, {"type": "text", "chars": 5598}, {"type": "text", "chars": 86}, {"type": "text", "chars": 759}, {"type": "text", "chars": 64}, {"type": "text", "chars": 581}, {"type": "text", "chars": 77}]}, {"role": "assistant", "blocks": [{"type": "thinking", "chars": 219, "has_signature": true}, {"type": "tool_use", "name": "Bash", "id": "<id>", "input_keys": ["command", "description"]}]}, {"role": "user", "blocks": [{"type": "tool_result", "tool_use_id": "<id>", "is_error": false, "content_chars": 102, "cache_control": {"type": "ephemeral"}}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 5, "cache_creation_input_tokens": 189, "cache_read_input_tokens": 28908, "cache_creation": {"ephemeral_5m_input_tokens": 189, "ephemeral_1h_input_tokens": 0}, "output_tokens": 1}, "id": "<id>", "model": "claude-haiku-4-5-20251001", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 3 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 23 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 10 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 13 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 2 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 2 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 7 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 12 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 10 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 14 chars>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "end_turn", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 5, "cache_creation_input_tokens": 189, "cache_read_input_tokens": 28908, "output_tokens": 32, "output_tokens_details": {"thinking_tokens": 0}}}
+{"type": "message_stop"}

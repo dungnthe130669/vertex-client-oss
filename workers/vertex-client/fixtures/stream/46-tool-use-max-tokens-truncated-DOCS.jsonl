@@ -1,0 +1,9 @@
+{"_fixture": "46-tool-use-max-tokens-truncated-DOCS", "source": "docs", "note": "max_tokens hit mid tool_use: partial_json never completes (unparseable). Client must NOT execute the tool; show truncated card + continue/retry with higher max_tokens. Never observed in logs."}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "id": "<id>", "model": "claude-sonnet-5-5", "content": [], "stop_reason": null, "stop_sequence": null, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 1}}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "tool_use", "id": "<id>", "name": "Write", "input": {}}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "{\"file_path\": \"<string 20 chars>\", \"content\": \"<string 900"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "max_tokens", "stop_sequence": null}, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 1024}}
+{"type": "message_stop"}

@@ -1,0 +1,2 @@
+{"_fixture": "34-error-429-gpt-oss", "source": "gateway-log", "log_id": "01M3NR70TWD8BWQCSD6YA9X5BC", "model": "google/gpt-oss-120b", "http_status": 429, "duration_ms": 1005, "note": "Google-shaped (list-wrapped) 429 RESOURCE_EXHAUSTED."}
+{"type": "http_error", "status": 429, "body": {"error": {"code": 429, "message": "The request is throttled due to too many concurrent requests.", "status": "RESOURCE_EXHAUSTED"}}}

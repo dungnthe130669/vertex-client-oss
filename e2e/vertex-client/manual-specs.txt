@@ -1,0 +1,8 @@
+# Specs that are NEVER part of core/full (e2eperf1): paused or need a real external thing. Run them by hand with `run.sh files ...` (cloud/agents/desktop also need E2E_CLOUD=1).
+# One basename per line. playwright.config.ts also keeps cloud/cloud-stop/agents/desktop out of every run unless E2E_CLOUD=1, and the two device-term-live specs unless E2E_GREP starts with vclterm.
+agents
+cloud
+cloud-stop
+desktop
+device-term-live
+device-term-live12

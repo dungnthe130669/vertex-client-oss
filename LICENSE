@@ -1,0 +1,9 @@
+SPDX-License-Identifier: LicenseRef-All-Rights-Reserved
+
+Copyright (c) 2026 dungnthe130669. All rights reserved.
+
+This source code is made visible for reading only. No licence is granted to use,
+copy, modify, merge, publish, distribute, sublicense or sell it, or to create
+derivative works from it, without prior written permission from the owner.
+
+Third-party components keep their own licences (see package.json and the lockfiles).

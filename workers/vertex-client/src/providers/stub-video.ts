@@ -1,0 +1,34 @@
+// Deterministic fake video provider for e2e (same scope rule as stub-image.ts: ONLY the e2e user's conversations are routed here).
+import { E2E_STUB_VIDEO_RATES, VIDEO_DEFAULT_RESOLUTION } from "../gen-cost";
+import { ProviderError, type ProviderModel, type VideoRequest, type VideoResult } from "./types";
+
+// A real, valid 2 s 64x36 MP4 (VP9 video, no audio, faststart; 2818 bytes). VP9, not H.264: Playwright's Chromium ships without H.264,
+// and WebKit/GStreamer decodes VP9-in-MP4, so <video> reaches readyState >= 1 in both e2e projects. Built once, offline, with
+//   ffmpeg -f lavfi -i testsrc=size=64x36:rate=5 -t 2 -c:v libvpx-vp9 -b:v 15k -pix_fmt yuv420p -movflags +faststart -an v.mp4
+export const STUB_MP4_B64 = "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";
+
+const params = { allowed: ["duration_seconds", "resolution", "aspect_ratio"], defaults: { duration_seconds: 3, resolution: "360p" },
+  values: { duration_seconds: "3..10", resolution: ["360p", "720p"], aspect_ratio: ["16:9", "9:16"] } };
+export const stubVideoModels = (): ProviderModel[] => [
+  { id: "e2e-stub-video", displayName: "E2E stub video", kind: "video", params },
+  { id: "e2e-stub-pro-video", displayName: "E2E stub pro video", kind: "video", params },
+];
+
+/** The clip is always the 2 s fixture; the reported duration/cost follow the request so usage/estimate assertions stay meaningful.
+ *  A prompt containing "blocked" is a safety refusal (422 generation_blocked); "timeout" is the gateway's 504 upstream_timeout; "slow"
+ *  holds the call for STUB_SLOW_MS (abortable) so the e2e can see the running card, reload mid-call and stop it. */
+export const STUB_SLOW_MS = 6000;
+export async function stubVideo(req: VideoRequest, signal?: AbortSignal): Promise<VideoResult> {
+  if (/\bslow\b/i.test(req.prompt)) await new Promise<void>((res, rej) => {
+    const t = setTimeout(res, STUB_SLOW_MS);
+    signal?.addEventListener("abort", () => { clearTimeout(t); rej(new DOMException("aborted", "AbortError")); }, { once: true });
+  });
+  const rate = E2E_STUB_VIDEO_RATES[req.model];
+  if (!rate) throw new ProviderError("That video model is not available.", 404, { type: "unknown_model" });
+  if (/\bblocked\b/i.test(req.prompt)) throw new ProviderError("The model declined to generate this video (SAFETY).", 422, { type: "generation_blocked", finishReason: "SAFETY", costUsd: 0 });
+  if (/\btimeout\b/i.test(req.prompt)) throw new ProviderError("Video generation timed out (the service gives up after 150 s). It may still have been billed, so it was not retried.", 504, { type: "upstream_timeout" });
+  const seconds = req.duration_seconds ?? 3, res = req.resolution ?? VIDEO_DEFAULT_RESOLUTION;
+  const usd = Math.round(((rate.perSecond[res] ?? 0) * seconds + rate.perRequest) * 1e6) / 1e6;
+  return { id: "vid_stub", model: req.model, video: { mime_type: "video/mp4", data: STUB_MP4_B64, duration_seconds: seconds, resolution: res, has_audio: false },
+    finish_reason: "completed", usage: { input_tokens: 8, output_tokens: 1931 * seconds, video_tokens: 1931 * seconds }, cost: { usd, basis: "stub", estimate_usd: usd, price_verified: false } };
+}

@@ -1,0 +1,15 @@
+{"_fixture": "18-text-sonnet5-summarized-display", "source": "gateway-log", "log_id": "01M3N8GXRZQMZTR3TNWTQ1YF45", "model": "anthropic/claude-sonnet-5", "http_status": 200, "duration_ms": 2753, "note": "Sonnet 5 with thinking.display=summarized: adaptive skipped thinking on an easy turn, so no thinking block."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "output_config", "stream", "system", "thinking", "tool_choice", "tools"], "thinking": {"type": "adaptive", "display": "summarized"}, "output_config": {"effort": "medium"}, "stream": true, "tool_choice": {"type": "auto"}, "max_tokens": 128000, "tools": 24, "messages": [{"role": "user", "content": "<text 101 chars>"}, {"role": "assistant", "blocks": [{"type": "tool_use", "name": "write_file", "id": "<id>", "input_keys": ["content", "path"], "cache_control": {"type": "ephemeral"}}]}, {"role": "user", "blocks": [{"type": "tool_result", "tool_use_id": "<id>", "is_error": false, "content_chars": 248, "cache_control": {"type": "ephemeral"}}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 2, "cache_creation_input_tokens": 18536, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 18536, "ephemeral_1h_input_tokens": 0}, "output_tokens": 8}, "id": "<id>", "model": "claude-sonnet-5", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 20 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 9 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 15 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 8 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 5 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 9 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 10 chars>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "end_turn", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 2, "cache_creation_input_tokens": 18536, "cache_read_input_tokens": 0, "output_tokens": 44, "output_tokens_details": {"thinking_tokens": 0}}}
+{"type": "message_stop"}

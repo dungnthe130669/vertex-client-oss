@@ -1,0 +1,11 @@
+{"_fixture": "42-pause-turn-DOCS", "source": "docs", "note": "Server-tool loop hit its iteration cap: stop_reason=pause_turn; client must resend the conversation (with this assistant turn appended) to continue. Never observed in logs."}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "id": "<id>", "model": "claude-sonnet-5-5", "content": [], "stop_reason": null, "stop_sequence": null, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 1}}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "server_tool_use", "id": "<id>", "name": "web_search", "input": {}}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "{\"query\": \"<string 30 chars>\"}"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "content_block_start", "index": 1, "content_block": {"type": "web_search_tool_result", "tool_use_id": "<id>", "content": [{"type": "web_search_result", "url": "<url>", "title": "<title>", "encrypted_content": "<encrypted>", "page_age": "<age>"}]}}
+{"type": "content_block_stop", "index": 1}
+{"type": "message_delta", "delta": {"stop_reason": "pause_turn", "stop_sequence": null}, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 200, "server_tool_use": {"web_search_requests": 1}}}
+{"type": "message_stop"}

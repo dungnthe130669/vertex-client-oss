@@ -1,0 +1,41 @@
+# Specs the OSS export's CI runs (public repo, no secrets, no gateway, no real accounts), one basename per line (no tests/ or .spec.ts).
+# Criterion (measured 2026-11-06, ossci1, export tree, clean HOME, local `wrangler dev --local`, no gateway/model): the spec passes completely
+# against that local Worker - mocked-API specs (run by the *-mock project) and live-page specs that never need a model. Specs that send a chat
+# turn / list gateway models / need a paired device, cloud agent or real account are NOT here (chat, chat-ux, tools, slash, skills, files, library,
+# fixes, attach-v2, auto-shadow, depth, nav, notifications, reliability, resilience, approval-modes, connectors, providers, scope-hardening, shell,
+# smoke, projects, csp, safe-area, desktop-login, voice*, cloud*, agents, desktop, device-term-live*): they stay on the private runner.
+# Order = descending measured duration, so a round-robin split into shards (see .github/workflows/e2e.yml) is roughly balanced. Do not reorder by taste.
+a11y
+nav-shell
+remote
+device-scroll
+header-menu
+menu2
+chat-env
+appbar
+auto
+desktop-ui
+composer
+artifacts
+video
+team-ux
+settings-profile
+image
+appbar-overlay
+svg-image-tool
+spaces
+providers2
+uifix1
+devices-identity
+palette
+device-term
+computers
+input
+advisor
+pwa-update
+about
+artifacts-html
+subauto
+subagents
+answer-limit
+team

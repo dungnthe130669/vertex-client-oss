@@ -1,0 +1,42 @@
+{"_fixture": "11-tool-result-roundtrip-sonnet55", "source": "gateway-log", "log_id": "01M3PA8CA29BDCPPNH5DNJ5TBQ", "model": "anthropic/claude-sonnet-5.5", "http_status": 200, "duration_ms": 1845, "note": "Request carries prior assistant tool_use + user tool_result blocks (see request_shape); response is the next model step."}
+{"type": "request_shape", "model_in_body": false, "top_level_keys": ["anthropic_version", "max_tokens", "messages", "metadata", "output_config", "stream", "system", "thinking", "tools"], "thinking": {"type": "adaptive"}, "output_config": {"effort": "medium"}, "stream": true, "tool_choice": null, "max_tokens": 128000, "tools": 20, "messages": [{"role": "user", "blocks": [{"type": "text", "chars": 759}, {"type": "text", "chars": 582}, {"type": "text", "chars": 76}]}, {"role": "system", "content": "<text 7652 chars>"}, {"role": "assistant", "blocks": [{"type": "tool_use", "name": "Bash", "id": "<id>", "input_keys": ["command"]}]}, {"role": "user", "blocks": [{"type": "tool_result", "tool_use_id": "<id>", "is_error": false, "content_chars": 336}]}, {"role": "system", "content": "<text 49 chars>"}, {"role": "assistant", "blocks": [{"type": "tool_use", "name": "Bash", "id": "<id>", "input_keys": ["command"]}]}, {"role": "user", "blocks": [{"type": "tool_result", "tool_use_id": "<id>", "is_error": false, "content_chars": 410}]}, {"role": "system", "blocks": [{"type": "text", "chars": 152, "cache_control": {"type": "ephemeral"}}]}]}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "container": null, "stop_reason": null, "stop_sequence": null, "stop_details": null, "usage": {"input_tokens": 2, "cache_creation_input_tokens": 23232, "cache_read_input_tokens": 0, "cache_creation": {"ephemeral_5m_input_tokens": 23232, "ephemeral_1h_input_tokens": 0}, "output_tokens": 16}, "id": "<id>", "model": "claude-sonnet-5-5", "content": []}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "tool_use", "id": "<id:3>", "name": "Bash", "input": {}}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "{"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "\""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "c"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "o"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "m"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "m"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "a"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "n"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "d"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "\""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ":"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " "}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "\""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "<"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "s"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "t"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "r"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "i"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "n"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "g"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " "}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "2"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "1"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "2"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": " "}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "c"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "h"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "a"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "r"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "s"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": ">"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "\""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "input_json_delta", "partial_json": "}"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "tool_use", "stop_sequence": null, "stop_details": null, "container": null}, "usage": {"input_tokens": 2, "cache_creation_input_tokens": 23232, "cache_read_input_tokens": 0, "output_tokens": 148, "output_tokens_details": {"thinking_tokens": 0}}}
+{"type": "message_stop"}

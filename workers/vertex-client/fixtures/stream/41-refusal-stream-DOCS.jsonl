@@ -1,0 +1,8 @@
+{"_fixture": "41-refusal-stream-DOCS", "source": "docs", "note": "stop_reason=refusal (streaming classifier intervention). Never observed in logs. stop_details shape is from docs and unverified on Vertex."}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "id": "<id>", "model": "claude-sonnet-5-5", "content": [], "stop_reason": null, "stop_sequence": null, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 1}}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "text_delta", "text": "<text 60 chars>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "message_delta", "delta": {"stop_reason": "refusal", "stop_sequence": null, "stop_details": {"type": "refusal", "category": "unspecified", "explanation": "<explanation>"}}, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 40}}
+{"type": "message_stop"}

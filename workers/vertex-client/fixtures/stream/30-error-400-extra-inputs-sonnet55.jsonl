@@ -1,0 +1,2 @@
+{"_fixture": "30-error-400-extra-inputs-sonnet55", "source": "gateway-log", "log_id": "01M3PA8B6D43HB59PS1ZNXP5RJ", "model": "anthropic/claude-sonnet-5.5", "http_status": 400, "duration_ms": 1123, "note": "Anthropic-shaped 400 from Vertex: field path in message. The gateway strips the field and retries once."}
+{"type": "http_error", "status": 400, "body": {"type": "error", "error": {"type": "invalid_request_error", "message": "messages.1.output_config: Extra inputs are not permitted"}, "request_id": "<req_id>"}}

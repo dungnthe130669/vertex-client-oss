@@ -1,0 +1,2 @@
+{"_fixture": "33-error-400-block-binding-sonnet55", "source": "gateway-log", "log_id": "01M3NSEHFD9W0P9124GQN3C69B", "model": "anthropic/claude-sonnet-5.5", "http_status": 400, "duration_ms": 652, "note": "thinking.adaptive.block_binding not accepted on Vertex 5.5."}
+{"type": "http_error", "status": 400, "body": {"type": "error", "error": {"type": "invalid_request_error", "message": "thinking.adaptive.block_binding: Extra inputs are not permitted"}, "request_id": "<req_id>"}}

@@ -1,0 +1,2 @@
+{"_fixture": "32-error-400-empty-thinking-block-sonnet55", "source": "gateway-log", "log_id": "01M3P8S2KMBVC98CHJYGYQR0NB", "model": "anthropic/claude-sonnet-5.5", "http_status": 400, "duration_ms": 413, "note": "Sonnet 5.5 rejects a replayed history containing an empty-text thinking block WITHOUT block_binding."}
+{"type": "http_error", "status": 400, "body": {"type": "error", "error": {"type": "invalid_request_error", "message": "messages.3.content.0.thinking: each thinking block must contain thinking"}, "request_id": "<req_id>"}}

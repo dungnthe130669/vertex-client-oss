@@ -1,0 +1,8 @@
+# Triaged 2026-11-06: the only generic-api-key hits are fake env values in unit-test fixtures (SESSION_SECRET: "test…", Bearer test tokens, fake push keys).
+[extend]
+useDefault = true
+[[allowlists]]
+description = "unit-test fixtures use fake secrets"
+paths = ['''workers/vertex-client/test/.*''', '''workers/vertex-client/test-cf/.*''']
+regexTarget = "match"
+rules = ["generic-api-key"]

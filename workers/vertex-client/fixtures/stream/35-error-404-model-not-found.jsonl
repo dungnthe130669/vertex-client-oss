@@ -1,0 +1,2 @@
+{"_fixture": "35-error-404-model-not-found", "source": "gateway-log", "log_id": "01M3NR6WC3QGKA1A5J8J2AYY3F", "model": "anthropic/claude-fable-5", "http_status": 404, "duration_ms": 1844, "note": "Google-shaped 404 for unknown publisher model."}
+{"type": "http_error", "status": 404, "body": {"error": {"code": 404, "message": "Publisher model `<x>` was not found or your project does not have access to it. Ensure you are using a valid model name and that the model is available in the specified region. For more information, s", "status": "NOT_FOUND"}}}

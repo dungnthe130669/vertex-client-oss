@@ -1,0 +1,35 @@
+// Self-host template (bring-your-own Cloudflare). PLACEHOLDERS ONLY: no real ids, no service bindings to anyone else's Workers, no domains.
+// Copy to wrangler.jsonc (or pass --config), replace every <PLACEHOLDER>, create the resources first (see SELF-HOST.md). Nothing here creates anything.
+// A binding you leave out simply switches the matching feature off; GET /api/admin/health (owner only) lists what is present and what to add.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "<your-worker-name>",
+  "main": "server/worker.ts",
+  "compatibility_date": "2026-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // Your own login: a GitHub OAuth app of your own (secrets GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET) and your login(s) here.
+  "vars": { "ALLOWED_GITHUB_LOGINS": "<your-github-login>" },
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/auth/*", "/af/*", "/api", "/api/*", "/device", "/device/*", "/bridge/*"]
+  },
+  // REQUIRED. wrangler d1 create <name>; then wrangler d1 migrations apply <name> --remote (every file in migrations/, in order).
+  "d1_databases": [{ "binding": "DB", "database_name": "<your-d1-name>", "database_id": "<your-d1-id>", "migrations_dir": "migrations" }],
+  // REQUIRED. CHAT = chat sessions; DEVICES = device terminal (optional, drop it and its v2 migration to turn devices off).
+  "durable_objects": { "bindings": [{ "name": "CHAT", "class_name": "ChatSession" }, { "name": "DEVICES", "class_name": "DeviceHub" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ChatSession"] }, { "tag": "v2", "new_sqlite_classes": ["DeviceHub"] }],
+  // Optional: file attachments. wrangler r2 bucket create <name>
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "<your-r2-bucket>" }],
+  // Optional (each one switches its feature on): Workers AI (transcribe, web tools with BROWSER), Browser Rendering, run_js sandbox, semantic search.
+  "ai": { "binding": "AI" },
+  "browser": { "binding": "BROWSER" },
+  "worker_loaders": [{ "binding": "LOADER" }],
+  // wrangler vectorize create <your-index> --dimensions=<n> --metric=<m>  (use the values the app's embedding model needs)
+  "vectorize": [{ "binding": "VECTORIZE", "index_name": "<your-vectorize-index>" }],
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+  "observability": { "enabled": true }
+  // Secrets (wrangler secret put <NAME>; never in this file): SESSION_SECRET, KEY_ENC_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET,
+  // optional VAPID_PRIVATE_KEY (+ var VAPID_PUBLIC_KEY / VAPID_SUBJECT) for push.
+  // NOT available outside the original owner's account: GATEWAY, AGENT, REMOTE, CONNECTOR service bindings (Vertex models, Cloud, Fleet, built-in connectors).
+}

@@ -1,0 +1,13 @@
+{"_fixture": "44-thinking-summarized-visible-DOCS", "source": "docs", "note": "thinking.display=summarized: real thinking_delta text then signature_delta, then text. Sonnet 5/5.5 logs only ever showed the omitted (empty) form; Haiku 4.5 enabled+budget showed visible thinking (fixture 15)."}
+{"type": "message_start", "message": {"type": "message", "role": "assistant", "id": "<id>", "model": "claude-sonnet-5-5", "content": [], "stop_reason": null, "stop_sequence": null, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 1}}}
+{"type": "ping"}
+{"type": "content_block_start", "index": 0, "content_block": {"type": "thinking", "thinking": "", "signature": ""}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "thinking_delta", "thinking": "<thinking 90 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "thinking_delta", "thinking": "<thinking 70 chars>"}}
+{"type": "content_block_delta", "index": 0, "delta": {"type": "signature_delta", "signature": "<sig>"}}
+{"type": "content_block_stop", "index": 0}
+{"type": "content_block_start", "index": 1, "content_block": {"type": "text", "text": ""}}
+{"type": "content_block_delta", "index": 1, "delta": {"type": "text_delta", "text": "<text 200 chars>"}}
+{"type": "content_block_stop", "index": 1}
+{"type": "message_delta", "delta": {"stop_reason": "end_turn", "stop_sequence": null}, "usage": {"input_tokens": 1200, "cache_creation_input_tokens": 0, "cache_read_input_tokens": 800, "output_tokens": 300, "output_tokens_details": {"thinking_tokens": 60}}}
+{"type": "message_stop"}

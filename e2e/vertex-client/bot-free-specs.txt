@@ -1,0 +1,26 @@
+# Specs that provably never log in as ANY e2e fixture user (mocked API only), one basename per line (no tests/ or .spec.ts).
+# Criterion, checked statically by scripts/slot-lists.test.mjs on every change: the spec does NOT import ./fixtures (the only login code), never mentions
+# /auth/e2e, E2E_TOKEN or e2eToken, and takes its whole API from polish-mock's mockApp (page.route on /api|/auth). Read one by one 2026-11-03.
+# Such a spec may run on any slot (it touches no account). Add a spec only after reading it.
+# e2eperf1 2026-11-05: + appbar, appbar-overlay, chat-env, device-term (mockApp / in-browser fake hub, no fixtures import, no login) and login-layout (live page, unauthenticated: no cookies/token/login code - the only member without mockApp).
+a11y
+advisor
+appbar
+appbar-overlay
+auto
+chat-env
+composer
+device-scroll
+device-term
+devices-identity
+login-layout
+menu2
+mobile-layout
+nav-shell
+providers2
+subagents
+subauto
+svg-image-tool
+team
+team-ux
+uifix1

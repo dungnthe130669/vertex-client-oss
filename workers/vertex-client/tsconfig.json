@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "bundler", "strict": true, "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], "jsx": "react-jsx", "jsxImportSource": "preact",
+    "skipLibCheck": true, "types": ["bun-types"]
+  },
+  "include": ["src", "server", ".cf-lite", "web/src", "test", "vite.config.ts"]
+}
